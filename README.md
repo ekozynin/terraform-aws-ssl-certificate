@@ -1,1 +1,1 @@
-Terraform module will create a certificate, and validate it by creating a DNS entry.
+Terraform module to create a certificate, and validate it by creating a DNS entry.
