@@ -28,11 +28,4 @@ resource "aws_route53_record" "dns_validation_record" {
 resource "aws_acm_certificate_validation" "ssl_certificate_validation" {
   certificate_arn         = aws_acm_certificate.ssl_certificate.arn
   validation_record_fqdns = [for record in aws_route53_record.dns_validation_record : record.fqdn]
-
-  // when the certificate is issued & validated, it is not immediately available
-  // so adding 15 seconds sleep, to let the certificate information propagate
-  // TODO still need this?
-//  provisioner "local-exec" {
-//    command = "echo '-----> waiting for a new certificate to become available...' && sleep 15"
-//  }
 }
