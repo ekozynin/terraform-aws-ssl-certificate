@@ -25,7 +25,7 @@ resource "aws_route53_record" "dns_validation_record" {
   type            = each.value.type
 }
 
-resource "aws_acm_certificate_validation" "ssl_certtificate_validation" {
+resource "aws_acm_certificate_validation" "ssl_certificate_validation" {
   certificate_arn         = aws_acm_certificate.ssl_certificate.arn
   validation_record_fqdns = [for record in aws_route53_record.dns_validation_record : record.fqdn]
 
