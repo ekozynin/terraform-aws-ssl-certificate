@@ -5,7 +5,7 @@ Example usage:
 ```hcl
 module "www_certificate" {
   source = "ekozynin/ssl-certificate/aws"
-  version = "~> 1.0.2"
+  version = "~> 1.0.3"
   providers = {
     // Cloudfront only supports ACM certs issues in us-east-1
     aws = aws.cloudfront
