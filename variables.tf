@@ -1,5 +1,5 @@
 variable "domain_name" {
-  type = string
+  type        = string
   description = "domain name for which certificate is required, ex. www.example.com"
 }
 
